@@ -1,65 +1,137 @@
-import Image from "next/image";
+import Link from "next/link";
+
+const atouts = [
+  {
+    titre: "Cafe de specialite",
+    texte: "Extraction precise, grains choisis et boissons signatures.",
+  },
+  {
+    titre: "Brunch & cuisine maison",
+    texte: "Une carte courte, genereuse, preparee avec des produits de saison.",
+  },
+  {
+    titre: "Lieu de vie",
+    texte: "Un espace calme et lumineux pour se retrouver ou travailler.",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="mx-auto w-full max-w-6xl space-y-8">
+      <section className="oma-shell relative overflow-hidden rounded-[2.2rem] border border-(--oma-green)/20 p-6 sm:p-9 md:p-12">
+        <div className="absolute -right-20 -top-20 h-56 w-56 rounded-full border border-(--oma-green)/15" />
+        <div className="absolute -left-14 top-16 h-24 w-24 rounded-full bg-(--oma-cocoa)/12" />
+        <div className="relative grid gap-10 md:grid-cols-[1.15fr_0.85fr] md:items-center">
+          <div className="space-y-6">
+            <p className="oma-kicker">Bordeaux - 64 rue du Mirail</p>
+            <h1 className="oma-title text-5xl sm:text-7xl">
+              Un cafe vivant, elegant et chaleureux.
+            </h1>
+            <p className="max-w-2xl text-lg leading-relaxed sm:text-xl">
+              Oma Cafe propose des cafes de specialite, une cuisine de saison et
+              un service attentif dans un cadre premium mais accessible.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <Link
+                href="/carte"
+                className="font-cta rounded-full bg-(--oma-cocoa) px-6 py-3 text-sm font-bold uppercase text-(--oma-paper) hover:-translate-y-0.5"
+              >
+                Voir la carte
+              </Link>
+              <Link
+                href="/contact"
+                className="font-cta rounded-full border border-(--oma-green)/50 bg-(--oma-paper)/70 px-6 py-3 text-sm font-bold uppercase hover:-translate-y-0.5"
+              >
+                Nous trouver
+              </Link>
+            </div>
+          </div>
+          <aside className="oma-card rounded-[1.8rem] p-6">
+            <p className="oma-kicker">Cette semaine</p>
+            <h2 className="mt-3 font-display text-4xl leading-[0.95]">
+              Brunch signature
+            </h2>
+            <p className="mt-4 leading-relaxed">
+              Assiette salee maison, toast de saison, cafe filtre ou cappuccino
+              et une douceur du jour.
+            </p>
+            <div className="mt-5 flex flex-wrap gap-2">
+              <span className="oma-chip">Mardi - vendredi</span>
+              <span className="oma-chip">8h30 - 18h30</span>
+              <span className="oma-chip">Sam - dim 9h - 19h</span>
+            </div>
+            <p className="mt-6 rounded-2xl border border-(--oma-green)/20 bg-(--oma-paper)/72 p-4 text-sm leading-relaxed">
+              Reserve les grands groupes par email pour privatisations, brunchs
+              d&apos;equipe ou evenements doux.
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <section className="grid gap-4 md:grid-cols-3">
+        {atouts.map((item) => (
+          <article key={item.titre} className="oma-card rounded-3xl p-6">
+            <p className="oma-kicker text-[0.62rem]">Experience Oma</p>
+            <h2 className="mt-3 font-display text-3xl leading-tight">{item.titre}</h2>
+            <p className="mt-3 text-lg leading-relaxed">{item.texte}</p>
+          </article>
+        ))}
+      </section>
+
+      <section className="grid gap-6 md:grid-cols-2">
+        <article className="oma-card rounded-[1.8rem] p-6 sm:p-8">
+          <p className="oma-kicker">Story</p>
+          <h2 className="mt-3 font-display text-4xl leading-tight">
+            Une histoire de famille
+          </h2>
+          <p className="mt-4 text-lg leading-relaxed">
+            Oma est une aventure mere-fille imaginee comme un cafe de proximite:
+            beau, bon, vivant, et toujours attentif a l&apos;accueil.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/notre-histoire"
+            className="font-cta mt-5 inline-block rounded-full border border-(--oma-green)/40 bg-(--oma-paper)/72 px-5 py-2.5 text-sm font-semibold uppercase"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            Notre histoire
+          </Link>
+        </article>
+        <article className="relative overflow-hidden rounded-[1.8rem] border border-(--oma-green)/20 bg-(--oma-green) p-6 text-(--oma-paper) sm:p-8">
+          <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full border border-(--oma-paper)/25" />
+          <p className="oma-kicker text-(--oma-paper)">Equipe</p>
+          <h2 className="mt-3 font-display text-4xl leading-tight">
+            Recrutement en cours
+          </h2>
+          <p className="mt-4 text-lg leading-relaxed text-(--oma-cream-soft)">
+            Barista, cuisine, patisserie: rejoignez une equipe bienveillante et
+            motivee pour faire grandir Oma Cafe.
+          </p>
+          <Link
+            href="/recrutement"
+            className="font-cta mt-5 inline-block rounded-full border border-(--oma-paper)/50 bg-(--oma-paper)/10 px-5 py-2.5 text-sm font-semibold uppercase"
           >
-            Documentation
-          </a>
-        </div>
-      </main>
+            Voir les offres
+          </Link>
+        </article>
+      </section>
+
+      <section className="grid gap-4 rounded-[1.8rem] border border-(--oma-green)/20 bg-(--oma-cream-soft)/75 p-6 sm:grid-cols-2 sm:p-8 lg:grid-cols-4">
+        <article className="rounded-2xl border border-(--oma-green)/20 bg-(--oma-paper)/88 p-4">
+          <p className="oma-kicker text-[0.6rem]">Adresse</p>
+          <p className="mt-2 text-base">64 rue du Mirail, Bordeaux</p>
+        </article>
+        <article className="rounded-2xl border border-(--oma-green)/20 bg-(--oma-paper)/88 p-4">
+          <p className="oma-kicker text-[0.6rem]">Acces</p>
+          <p className="mt-2 text-base">Tram B - Musee d&apos;Aquitaine</p>
+        </article>
+        <article className="rounded-2xl border border-(--oma-green)/20 bg-(--oma-paper)/88 p-4">
+          <p className="oma-kicker text-[0.6rem]">Contact</p>
+          <p className="mt-2 text-base">contact@omacafe.fr</p>
+        </article>
+        <article className="rounded-2xl border border-(--oma-green)/20 bg-(--oma-paper)/88 p-4">
+          <p className="oma-kicker text-[0.6rem]">Instagram</p>
+          <p className="mt-2 text-base">@omacafe.bordeaux</p>
+        </article>
+      </section>
     </div>
   );
 }

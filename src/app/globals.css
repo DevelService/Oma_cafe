@@ -1,26 +1,112 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --oma-cream: #f6efe4;
+  --oma-cream-soft: #efe3d0;
+  --oma-green: #25382f;
+  --oma-clay: #8a5a3b;
+  --oma-cocoa: #5e3f2f;
+  --oma-paper: #fff8ed;
+  --background: var(--oma-cream);
+  --foreground: var(--oma-green);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  background: var(--background);
 }
 
 body {
-  background: var(--background);
+  background:
+    radial-gradient(circle at 4% 6%, rgb(37 56 47 / 16%) 0, transparent 18%),
+    radial-gradient(circle at 95% 12%, rgb(138 90 59 / 15%) 0, transparent 20%),
+    radial-gradient(circle at 88% 84%, rgb(37 56 47 / 12%) 0, transparent 24%),
+    var(--background);
+  background-repeat: no-repeat;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Avenir Next", Avenir, "Segoe UI", "Helvetica Neue", sans-serif;
+  min-height: 100vh;
+  letter-spacing: 0.012em;
 }
+
+* {
+  border-color: rgb(37 56 47 / 20%);
+}
+
+a {
+  transition: opacity 160ms ease, transform 160ms ease, color 160ms ease;
+}
+
+a:hover {
+  opacity: 0.9;
+}
+
+.font-display {
+  font-family: var(--font-hoss-display), var(--font-providence), sans-serif;
+  letter-spacing: 0.03em;
+}
+
+.oma-shell {
+  background:
+    linear-gradient(
+      115deg,
+      rgb(255 248 237 / 66%) 0%,
+      rgb(246 239 228 / 60%) 60%,
+      rgb(239 227 208 / 72%) 100%
+    ),
+    linear-gradient(
+    180deg,
+      rgb(255 248 237 / 34%) 0%,
+      rgb(246 239 228 / 30%) 100%
+    );
+  backdrop-filter: blur(8px);
+  box-shadow:
+    0 30px 70px rgb(37 56 47 / 13%),
+    inset 0 1px 0 rgb(255 248 237 / 90%);
+}
+
+.oma-card {
+  background: linear-gradient(
+    180deg,
+    rgb(255 248 237 / 70%) 0%,
+    rgb(246 239 228 / 52%) 100%
+  );
+  border: 1px solid rgb(37 56 47 / 20%);
+  box-shadow:
+    0 16px 34px rgb(37 56 47 / 10%),
+    inset 0 1px 0 rgb(255 248 237 / 80%);
+}
+
+.oma-kicker {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+}
+
+.oma-title {
+  font-family: var(--font-hoss-display), var(--font-providence), sans-serif;
+  line-height: 0.92;
+  letter-spacing: 0.02em;
+}
+
+.oma-chip {
+  border: 1px solid rgb(37 56 47 / 22%);
+  border-radius: 9999px;
+  background: rgb(255 248 237 / 72%);
+  padding: 0.45rem 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.font-cta {
+  font-family: var(--font-providence), "Avenir Next", Avenir, sans-serif;
+  letter-spacing: 0.08em;
+}
+
