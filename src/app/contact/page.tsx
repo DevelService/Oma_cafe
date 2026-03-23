@@ -1,15 +1,21 @@
+import { Card } from "@/components/ui/Card";
+import { CtaAnchor } from "@/components/ui/Cta";
+import { Kicker } from "@/components/ui/Kicker";
+import { PageContainer } from "@/components/ui/PageContainer";
+import { ShellSection } from "@/components/ui/ShellSection";
+
 export default function ContactPage() {
   return (
-    <section className="mx-auto w-full max-w-6xl">
+    <PageContainer>
       <div className="grid gap-6 md:grid-cols-2">
-        <div className="oma-shell rounded-4xl border border-(--oma-green)/24 p-8 sm:p-10">
-          <p className="oma-kicker">Contact</p>
+        <ShellSection className="border-(--oma-green)/24 p-8 sm:p-10">
+          <Kicker>Contact</Kicker>
           <h1 className="mt-3 font-display text-5xl leading-[0.95] sm:text-6xl">
             Venir chez Oma
           </h1>
           <p className="mt-5 text-lg leading-relaxed">
-            Pour une reservation de groupe, une candidature ou une question,
-            ecrivez-nous par email ou sur Instagram.
+            Pour une réservation de groupe, une candidature ou une question,
+            écrivez-nous par email ou sur Instagram.
           </p>
           <div className="mt-8 space-y-3 rounded-2xl border border-(--oma-green)/20 bg-(--oma-paper)/85 p-4 text-lg">
             <p className="leading-relaxed">
@@ -32,9 +38,9 @@ export default function ContactPage() {
               </a>
             </p>
           </div>
-        </div>
+        </ShellSection>
 
-        <div className="oma-card rounded-4xl p-8 sm:p-10">
+        <Card className="rounded-4xl p-8 sm:p-10">
           <h2 className="font-display text-4xl">Infos pratiques</h2>
           <div className="mt-6 space-y-4 text-lg">
             <p className="leading-relaxed">
@@ -49,20 +55,22 @@ export default function ContactPage() {
               Samedi - Dimanche: 9h00 - 19h00
             </p>
             <p className="leading-relaxed">
-              <span className="font-semibold">Acces:</span> Tram B, arret Musee
-              d&apos;Aquitaine puis 5 min a pied.
+              <span className="font-semibold">Accès:</span> Tram B, arrêt Musée
+              d&apos;Aquitaine puis 5 min à pied.
             </p>
           </div>
-          <a
+          <CtaAnchor
             href="https://maps.google.com/?q=64+rue+du+Mirail+33000+Bordeaux"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-cta mt-7 inline-block rounded-full bg-(--oma-cocoa) px-6 py-3 text-sm font-bold uppercase text-(--oma-paper)"
+            variant="primary"
+            size="md"
+            className="mt-7"
           >
-            Ouvrir l&apos;itineraire
-          </a>
-        </div>
+            Ouvrir l&apos;itinéraire
+          </CtaAnchor>
+        </Card>
       </div>
-    </section>
+    </PageContainer>
   );
 }

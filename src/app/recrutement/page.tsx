@@ -1,53 +1,59 @@
-const postes = ["Barista", "Cuisine", "Patisserie"];
+import { Card } from "@/components/ui/Card";
+import { Chip } from "@/components/ui/Chip";
+import { Kicker } from "@/components/ui/Kicker";
+import { PageContainer } from "@/components/ui/PageContainer";
+import { ShellSection } from "@/components/ui/ShellSection";
+
+const postes = ["Barista", "Cuisine", "Pâtisserie"];
 
 export default function RecrutementPage() {
   return (
-    <section className="mx-auto w-full max-w-6xl space-y-6">
-      <div className="oma-shell rounded-4xl border border-(--oma-green)/20 p-6 text-center sm:p-8">
-        <p className="oma-kicker">On recrute</p>
+    <PageContainer className="space-y-6">
+      <ShellSection className="text-center">
+        <Kicker>On recrute</Kicker>
         <h1 className="mt-3 font-display text-5xl leading-[0.94] sm:text-6xl">
-          Rejoindre l&apos;equipe Oma Cafe
+          Rejoindre l&apos;équipe Oma Café
         </h1>
         <p className="mx-auto mt-4 max-w-3xl text-lg leading-relaxed sm:text-xl">
-          Nous cherchons des personnes motivees, souriantes et bienveillantes
-          pour faire vivre le cafe au quotidien. Si vous aimez le travail
-          d&apos;equipe et le sens du service, envoyez-nous votre candidature.
+          Nous cherchons des personnes motivées, souriantes et bienveillantes
+          pour faire vivre le café au quotidien. Si vous aimez le travail
+          d&apos;équipe et le sens du service, envoyez-nous votre candidature.
         </p>
-      </div>
+      </ShellSection>
 
       <div className="grid gap-6 md:grid-cols-2">
-        <article className="oma-card rounded-3xl p-6 sm:p-8">
-          <p className="oma-kicker text-[0.62rem]">Profil recherche</p>
+        <Card className="rounded-3xl p-6 sm:p-8">
+          <Kicker className="text-[0.62rem]">Profil recherché</Kicker>
           <h2 className="mt-3 font-display text-4xl leading-tight">
-            Esprit d&apos;equipe et sens du detail
+            Esprit d&apos;équipe et sens du détail
           </h2>
           <p className="mt-4 text-lg leading-relaxed">
             Nous cherchons des profils fiables, souriants et autonomes, capables
-            de garder une vraie qualite de service pendant les rushs.
+            de garder une vraie qualité de service pendant les rushs.
           </p>
           <div className="mt-5 flex flex-wrap gap-2">
-            <span className="oma-chip">CDI / CDD</span>
-            <span className="oma-chip">Temps plein</span>
-            <span className="oma-chip">Temps partiel</span>
+            <Chip>CDI / CDD</Chip>
+            <Chip>Temps plein</Chip>
+            <Chip>Temps partiel</Chip>
           </div>
-        </article>
+        </Card>
         <article className="rounded-3xl border border-(--oma-green)/20 bg-(--oma-green) p-6 text-(--oma-paper) sm:p-8">
-          <p className="oma-kicker text-(--oma-paper) text-[0.62rem]">
+          <Kicker className="text-(--oma-paper) text-[0.62rem]">
             Ce que nous offrons
-          </p>
+          </Kicker>
           <h2 className="mt-3 font-display text-4xl leading-tight">
             Un cadre sain et formateur
           </h2>
           <ul className="mt-4 space-y-2 text-lg leading-relaxed text-(--oma-cream-soft)">
-            <li>Formation cafe et service continue</li>
-            <li>Equipe attentive et progression claire</li>
-            <li>Planning anticipe et ambiance bienveillante</li>
+            <li>Formation café et service continue</li>
+            <li>Équipe attentive et progression claire</li>
+            <li>Planning anticipé et ambiance bienveillante</li>
           </ul>
         </article>
       </div>
 
-      <div className="oma-card rounded-3xl p-6 sm:p-8">
-        <h2 className="font-display text-4xl">Postes a pourvoir</h2>
+      <Card className="rounded-3xl p-6 sm:p-8">
+        <h2 className="font-display text-4xl">Postes à pourvoir</h2>
         <ul className="mt-4 flex flex-wrap gap-3">
           {postes.map((poste) => (
             <li
@@ -59,7 +65,7 @@ export default function RecrutementPage() {
           ))}
         </ul>
         <p className="mt-5 text-base leading-relaxed sm:text-lg">
-          Temps plein, temps partiel ou jobs etudiants.
+          Temps plein, temps partiel ou jobs étudiants.
         </p>
         <p className="mt-2 text-base leading-relaxed sm:text-lg">
           Lieu: 64 rue du Mirail, Bordeaux
@@ -70,7 +76,7 @@ export default function RecrutementPage() {
             contact@omacafe.fr
           </a>
         </p>
-      </div>
-    </section>
+      </Card>
+    </PageContainer>
   );
 }
