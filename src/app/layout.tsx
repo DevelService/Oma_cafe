@@ -21,9 +21,9 @@ export const metadata: Metadata = {
   description:
     "Oma Café à Bordeaux: café de quartier, brunch, pâtisseries maison et boissons de saison au 64 rue du Mirail.",
   icons: {
-    icon: "/Logo.png",
-    shortcut: "/Logo.png",
-    apple: "/Logo.png",
+    icon: "/oma-logo.png",
+    shortcut: "/oma-logo.png",
+    apple: "/oma-logo.png",
   },
 };
 

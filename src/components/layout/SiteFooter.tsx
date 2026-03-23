@@ -8,7 +8,7 @@ export function SiteFooter() {
         <div>
           <div className="flex items-center gap-3">
             <Image
-              src="/Logo.png"
+              src="/oma-logo.png"
               alt="Logo Oma Café"
               width={30}
               height={30}

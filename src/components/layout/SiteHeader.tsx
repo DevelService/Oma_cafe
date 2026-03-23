@@ -12,7 +12,7 @@ export function SiteHeader({ navigation }: SiteHeaderProps) {
       <nav className="oma-shell mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-4 rounded-[1.75rem] border border-(--oma-green)/20 px-4 py-3 sm:px-6">
         <div className="flex items-center gap-3">
           <Image
-            src="/Logo.png"
+            src="/oma-logo.png"
             alt="Logo Oma Café"
             width={40}
             height={40}
